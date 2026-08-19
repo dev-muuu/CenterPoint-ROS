@@ -1,0 +1,31 @@
+# --- colcon 산출물 ---
+build/
+install/
+log/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# --- C/CUDA 확장 빌드 산출물 ---
+# 컴파일된 확장은 파이썬/torch/CUDA 버전에 묶여 있어 다른 환경에서 못 쓴다.
+# 상류 관례대로 커밋하지 않고, 클론한 쪽에서 재빌드한다.
+#   cd src/centerpoint_ros/det3d/ops/iou3d_nms && python3 setup.py build_ext --inplace
+*.so
+*.o
+*.obj
+src/centerpoint_ros/det3d/ops/*/build/
+
+# --- 데이터 / 추론 결과 ---
+# detection_pred.bin (1.1GB) 등 추론 덤프는 저장소에 넣지 않는다.
+*.bin
+csv/
+*.csv
+
+# --- 에디터 ---
+.vscode/
+.idea/
+*.swp
+.DS_Store

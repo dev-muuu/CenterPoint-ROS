@@ -1,0 +1,21 @@
+# Git LFS 설정 (선택)
+#
+# 이 저장소에는 모델 가중치(*.pth)와 컴파일된 CUDA 확장(*.so)이 포함되어
+# 있습니다. 개별 파일은 모두 GitHub 한도(100MB) 미만이라 일반 git 으로도
+# push 가 되지만, 리비전이 쌓이면 저장소가 빠르게 커집니다.
+#
+# LFS 를 쓰려면:
+#   1) sudo apt install git-lfs && git lfs install
+#   2) 아래 세 줄의 주석을 해제
+#   3) 첫 커밋 전에 적용할 것 (이미 커밋한 뒤라면 git lfs migrate import 필요)
+#
+# *.pth filter=lfs diff=lfs merge=lfs -text
+# *.so  filter=lfs diff=lfs merge=lfs -text
+# *.pkl filter=lfs diff=lfs merge=lfs -text
+
+# 개행 정규화
+*.py   text eol=lf
+*.xml  text eol=lf
+*.yaml text eol=lf
+*.txt  text eol=lf
+*.md   text eol=lf
